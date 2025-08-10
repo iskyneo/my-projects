@@ -493,3 +493,15 @@
       </div>
     );
   }
+
+<button
+  onClick={async ()=>{
+    try {
+      const x = await fetchExtendedOperaInfo('O mio babbino caro');
+      alert('확장 스토리 길이: ' + (x.history?.length || 0));
+    } catch (e) { alert('API 호출 실패: ' + e.message); }
+  }}
+  style={{marginLeft:8, padding:'8px 10px'}}
+>
+  패치 진단
+</button>
